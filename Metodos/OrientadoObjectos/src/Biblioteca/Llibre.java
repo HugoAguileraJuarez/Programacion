@@ -13,13 +13,6 @@ public class Llibre {
     }
 
     //metodos
-    public String getNombreLibro(){
-        return nombreLibro;
-    }
-    public void setNombreLibro(){
-        this.nombreLibro = nombreLibro;
-    }
-
     public int getNumPaginas(){
         return numPaginas;
     }
@@ -30,4 +23,11 @@ public class Llibre {
     public String getAuthor(){
         return author;
     }
+
+    @Override
+    public String toString(){
+        return "El nombre del libro es " + nombreLibro +" y su numero de paginas son " + numPaginas;
+    }
+
+
 }

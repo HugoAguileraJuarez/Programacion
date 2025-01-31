@@ -12,13 +12,6 @@ public class Author {
     }
 
     //metodos
-    public String getNombre(){
-        return nombre;
-    }
-    public void setNombre(){
-        this.nombre = nombre;
-    }
-
     public Author[] getListaLibros(){
         return listaLibros;
     }
