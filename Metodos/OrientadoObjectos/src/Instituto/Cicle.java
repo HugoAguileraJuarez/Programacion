@@ -50,13 +50,10 @@ public class Cicle {
             }
             moduls = array;
         }
-        if (numModuls < moduls.length) {
             moduls[numModuls] = modul;
+            modul.setPunteroCicle(this);
             numModuls++;
             return true;
-        }
-
-        return false;
     }
 
 
