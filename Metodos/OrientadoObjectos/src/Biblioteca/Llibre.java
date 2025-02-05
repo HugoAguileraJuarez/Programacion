@@ -4,30 +4,50 @@ public class Llibre {
     //atributos
     private String nombreLibro;
     private int numPaginas;
-    private String author;
+    private Author punteroAuthor;
+    private Author nombreAuthor;
 
     //constructor
-    public Llibre(String nombreLibro, int numPaginas){
+    public Llibre(String nombreLibro, int numPaginas, Author punteroAuthor, Author nombreAuthor){
         this.nombreLibro = nombreLibro;
         this.numPaginas = numPaginas;
+        this.punteroAuthor = punteroAuthor;
+        this.nombreAuthor = nombreAuthor;
     }
 
     //metodos
-    public int getNumPaginas(){
-        return numPaginas;
-    }
-    public void setNumPaginas(){
-        this.numPaginas = numPaginas;
+    public String getNombreLibro() {
+        return nombreLibro;
     }
 
-    public String getAuthor(){
+    public void setPunteroAuthor(Author punteroAuthor) {
+        this.punteroAuthor = punteroAuthor;
+    }
+
+    public Author getPunteroAuthor() {
+        return punteroAuthor;
+    }
+
+    public void setNombreAuthor(Author nombreAuthor) {
+        this.nombreAuthor = nombreAuthor;
+    }
+
+    //metodo de agregar un author
+    public Author agregacionAuthor(Author author){
+        if (author == null){
+            return null;
+        }
+
         return author;
     }
 
     @Override
     public String toString(){
-        return "El nombre del libro es " + nombreLibro +" y su numero de paginas son " + numPaginas;
+        return "El nombre del libro es " + nombreLibro +" y su numero de paginas son " + numPaginas + " y el author es "+ punteroAuthor.getNombre();
     }
+
+
+
 
 
 }
