@@ -5,14 +5,12 @@ public class Llibre {
     private String nombreLibro;
     private int numPaginas;
     private Author punteroAuthor;
-    private Author nombreAuthor;
 
     //constructor
-    public Llibre(String nombreLibro, int numPaginas, Author punteroAuthor, Author nombreAuthor){
+    public Llibre(String nombreLibro, int numPaginas, Author punteroAuthor){
         this.nombreLibro = nombreLibro;
         this.numPaginas = numPaginas;
         this.punteroAuthor = punteroAuthor;
-        this.nombreAuthor = nombreAuthor;
     }
 
     //metodos
@@ -28,9 +26,6 @@ public class Llibre {
         return punteroAuthor;
     }
 
-    public void setNombreAuthor(Author nombreAuthor) {
-        this.nombreAuthor = nombreAuthor;
-    }
 
     //metodo de agregar un author
     public Author agregacionAuthor(Author author){
