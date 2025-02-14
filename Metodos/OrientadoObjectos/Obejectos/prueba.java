@@ -9,11 +9,11 @@ public class prueba {
         Vehiculo v = c; //c es coche y hacemos que v se comporta como un coche
 
         System.out.println(v); //toString se ha sobre escrito.
-
-        Vehiculo fur = new Vehiculo("peugot", 9);
+/*
+       Vehiculo fur = new Vehiculo("peugot", 9);
         System.out.println(fur);
         System.out.println(((Coche)v).hasAireAcondicionado());
-       // System.out.println(((Coche)fur).hasAireAcondicionado());
+       System.out.println(((Coche)fur).hasAireAcondicionado());
 
         System.out.println(c.identificar());
 
@@ -27,7 +27,7 @@ public class prueba {
         System.out.println(c instanceof Vehiculo);
         System.out.println(fur instanceof Coche); //Da falso ya que furgoneta solo es veichulo y no coche
         System.out.println(fur instanceof Vehiculo);
-
+*/
 
 
 

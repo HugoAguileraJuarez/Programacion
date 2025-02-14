@@ -1,6 +1,6 @@
 package Obejectos;
 
-public /*abstract */ class Vehiculo {
+public abstract class Vehiculo {
     protected String marca;
     protected int capacidad;
 
@@ -33,9 +33,7 @@ public /*abstract */ class Vehiculo {
                 '}';
     }
 
-    public String identificar(){
-        return "Soy un vehiculo";
-    }
+    public abstract String identificar(); // como el metodo es abstracto hay que eliminar {} y poner ;
 
 
 
