@@ -1,6 +1,6 @@
 package Obejectos;
 
-public class furgoneta extends Vehiculo{
+public class furgoneta extends Vehiculo implements Diesel{
 
     public furgoneta(String marca, int capacidad){
         super(marca,capacidad);
@@ -11,5 +11,14 @@ public class furgoneta extends Vehiculo{
         return "Soy una furgoneta";
     }
 
+    @Override
+    public boolean revisarSistemasCirculacionCasos(){
+        return false;
+    }
+
+    @Override
+    public boolean revisarBombaInyencion(){
+        return false;
+    }
 
 }

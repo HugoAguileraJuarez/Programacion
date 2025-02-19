@@ -29,6 +29,8 @@ public class prueba {
         System.out.println(fur instanceof Vehiculo);
 */
 
+        Tesla teslaRojo = new Tesla("Tesla",5,true);
+        Electrico teslaCanostra = teslaRojo;
 
 
     }
