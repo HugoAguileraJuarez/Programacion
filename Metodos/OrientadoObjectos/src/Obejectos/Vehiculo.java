@@ -21,9 +21,8 @@ public abstract class Vehiculo {
         return capacidad;
     }
 
-    public void setCapacidad(int capacidad) {
-        this.capacidad = capacidad;
-    }
+    public abstract void setCapacidad(int capacidad) throws Exception;
+//
 
     @Override
     public String toString() {
@@ -34,7 +33,6 @@ public abstract class Vehiculo {
     }
 
     public abstract String identificar(); // como el metodo es abstracto hay que eliminar {} y poner ;
-
 
 
 }

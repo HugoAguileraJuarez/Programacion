@@ -7,6 +7,14 @@ public class furgoneta extends Vehiculo implements Diesel{
     }
 
     @Override
+    public void setCapacidad(int capacidad) throws Exception {
+        if(capacidad <= 0 || capacidad >7){
+            throw new Exception("Error bro");
+        }
+        this.capacidad = capacidad;
+    }
+
+    @Override
     public String identificar() {
         return "Soy una furgoneta";
     }

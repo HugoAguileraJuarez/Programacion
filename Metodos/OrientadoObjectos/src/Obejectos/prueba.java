@@ -31,7 +31,41 @@ public class prueba {
 
         Tesla teslaRojo = new Tesla("Tesla",5,true);
         Electrico teslaCanostra = teslaRojo;
+        try{
+            teslaRojo.setCapacidad(2);
+            teslaRojo.setCapacidad(-2);
+        }catch (Exception e){
+            e.printStackTrace(); //imprimir la pila de llamado de exepcion
+        }
 
 
     }
+    public void compra()throws StockExecption{
+        throw new StockExecption();
+    }
+
+    public void pruebasExepcion(){
+        pruebasExepcion2();
+    }
+
+    public void pruebasExepcion2(){
+        pruebasExepcion3();
+    }
+
+
+    public void pruebasExepcion3(){
+        int numerador = 3;
+        int denominador = 8;
+        try {
+            int resultado = numerador / denominador;
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            System.out.println("Excuta finally");
+        }
+    }
+
 }
+
+
