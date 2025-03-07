@@ -1,5 +1,7 @@
 package Contenodores;
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -99,7 +101,7 @@ public class Pruebas {
 
        */
 
-        HashMap<String, Pruebas> peliculas = new HashMap<>();
+        HashMap<String, Pelicula> peliculas = new HashMap<>();
         //crear pelicula de muestra
         Generos terror = new Generos("terror");
         Generos drama = new Generos("drama");
@@ -121,7 +123,9 @@ public class Pruebas {
 
         //Dada una id mostrar los datos de esa pelicula
         System.out.println(mostrarPelicula("2", peliculas));
+
         //implementa metodo de cerca de pelicula por titulo
+        System.out.println(buscarPelicula("Exorcista", peliculas));
 
         //implementa busqueda de peliculas por generos
 
@@ -134,17 +138,30 @@ public class Pruebas {
         return (pelicul != null) ? pelicul.toString(): "";
     }
 
-    public static String buscarPelicula(HashMap<String, Pelicula> pelicula){
-        for (Map.Entry<String, Pelicula> entrada: pelicula.entrySet()){
-            if (entrada.equals("J")){
-                return
-            }else {
+    public static String buscarPelicula(String titol, HashMap<String, Pelicula> peliculas){
+        for (Pelicula peli: peliculas.values()){
+            if (peli.getTitulo().equals(titol)){
+                return peli.toString();
+            }
+        }
+        return "";
+    }
+
+    public static ArrayList<Pelicula> busquedaGenero(String genero, HashMap<String, Pelicula> peliculas){
+        //crear un objecto de lista de resultados
+        //rocore la lista de la pelicula, una vez con la pelicula recorrer lista de generos for por arraylist
+        // si el genero coincide añadir a la lista de resultado
+        for (Pelicula entrada : peliculas.values()){
+            for (Generos h: entrada.getGeneros(genero)) {
                 return null;
             }
         }
-        return null
+
+        return null;
     }
 
-
+    public static ArrayList<Pelicula> filtroPorAño(int añoMin, int añoMax, HashMap<String, Pelicula> peliculas){
+        return null;
+    }
 
 }
