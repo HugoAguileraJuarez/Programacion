@@ -1,9 +1,12 @@
 package Contenodores;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Pruebas {
     public static void main(String[] args){
+    /*
         ArrayList lista = new ArrayList();
 
         lista.add("0");
@@ -45,11 +48,101 @@ public class Pruebas {
         }
         //
 
+        */
+        /*
+        Nodos<String> n = new Nodos<>("a");
+        Lista l = new Lista(n);
+        l.añadirNodo(new Nodos<String>("5"));
+        l.añadirNodo(new Nodos<String>("rr"));
+        l.imprimirLista();
+
+        l.añadirNodo(new Nodos<String>("af"));
+        l.añadirNodo(new Nodos<String>("af43"));
+        l.imprimirLista();
+        System.out.println(l.getNodos(0));
+        System.out.println(l.getNodos(2));
+        System.out.println(l.getTamaño()-1);
 
 
+        HashSet<String> conjuntoString = new HashSet<>();
+        conjuntoString.add("djfkasdjfakòsdf4523526354");//Elemento fuera de orden alfabetico
+        conjuntoString.add("a");
+        conjuntoString.add("a");//Elemento repetido
+        conjuntoString.add("b");//Elemento fuera de orden alfabetico
+
+        for (String s: conjuntoString){
+            System.out.println(s + s.hashCode());
+        }
 
 
+        HashMap<String, String> mapa = new HashMap<>();
 
+        mapa.put("00000000T", "Nom alumno 1");
+        mapa.put("00000001R", "Nom alumno 2");
+        mapa.put("00000002W", "Nom alumno 3");
+
+        String nombre = mapa.get("00000001R");
+        System.out.println(nombre);
+
+        for (String llave: mapa.keySet()){
+            System.out.println(llave);
+        }
+
+        for (String valor: mapa.values()){
+            System.out.println(valor);
+        }
+
+        for (Map.Entry<String, String> entrada: mapa.entrySet()){
+            System.out.println(entrada.getKey());
+            System.out.println(entrada.getValue());
+        }
+
+       */
+
+        HashMap<String, Pruebas> peliculas = new HashMap<>();
+        //crear pelicula de muestra
+        Generos terror = new Generos("terror");
+        Generos drama = new Generos("drama");
+        Generos romance = new Generos("romance");
+        Generos cienciaFicion = new Generos("Ciencia ficion");
+        ArrayList<Generos> generosTitanic = new ArrayList<>();
+        generosTitanic.add(drama);
+        generosTitanic.add(romance);
+        peliculas.put("1", new Pelicula("1","Titanic",1995, generosTitanic));
+
+        ArrayList<Generos> generosJurassicPark = new ArrayList<>();
+        generosJurassicPark.add(terror);
+        generosJurassicPark.add(cienciaFicion);
+        peliculas.put("2", new Pelicula("2","Jurassic Park",1993,generosJurassicPark));
+
+        ArrayList<Generos> generosExorcista = new ArrayList<>();
+        generosExorcista.add(terror);
+        peliculas.put("3", new Pelicula("3","Exorcista",1975,generosExorcista));
+
+        //Dada una id mostrar los datos de esa pelicula
+        System.out.println(mostrarPelicula("2", peliculas));
+        //implementa metodo de cerca de pelicula por titulo
+
+        //implementa busqueda de peliculas por generos
+
+        //implementar filtro de año, posar un año minimo y maximo y retornar lista de pelis
+    }
+
+    public static String mostrarPelicula(String id, HashMap<String, Pelicula> peliculas){
+        //Tenemos que pasar la lista por parametros ya que esto no es una clase que contenga todos los datos en forma de atributo
+        Pelicula pelicul = peliculas.get(id);
+        return (pelicul != null) ? pelicul.toString(): "";
+    }
+
+    public static String buscarPelicula(HashMap<String, Pelicula> pelicula){
+        for (Map.Entry<String, Pelicula> entrada: pelicula.entrySet()){
+            if (entrada.equals("J")){
+                return
+            }else {
+                return null;
+            }
+        }
+        return null
     }
 
 
