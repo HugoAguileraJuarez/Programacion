@@ -128,6 +128,9 @@ public class Pruebas {
         System.out.println(buscarPelicula("Exorcista", peliculas));
 
         //implementa busqueda de peliculas por generos
+        ArrayList<Pelicula> pelisculasTerror = busquedaGenero("terror",peliculas);
+        ArrayList<Pelicula> pelisculasComedia = busquedaGenero("comedia",peliculas);
+        ArrayList<Pelicula> pelisculasDramas = busquedaGenero("drama",peliculas);
 
         //implementar filtro de año, posar un año minimo y maximo y retornar lista de pelis
     }
@@ -151,17 +154,34 @@ public class Pruebas {
         //crear un objecto de lista de resultados
         //rocore la lista de la pelicula, una vez con la pelicula recorrer lista de generos for por arraylist
         // si el genero coincide añadir a la lista de resultado
-        for (Pelicula entrada : peliculas.values()){
-            for (Generos h: entrada.getGeneros(genero)) {
-                return null;
-            }
+        if(genero == null || peliculas == null){
+            return null;
         }
 
-        return null;
+        ArrayList<Pelicula> resultado = new ArrayList<>();
+        for (Pelicula entrada : peliculas.values()){
+            for (Generos h: entrada.getGeneros()) {
+                if (genero.equalsIgnoreCase(h.getNombre())){
+                    resultado.add(entrada);
+                    break;
+                }
+            }
+        }
+        return resultado;
     }
 
     public static ArrayList<Pelicula> filtroPorAño(int añoMin, int añoMax, HashMap<String, Pelicula> peliculas){
+
+
+
+
         return null;
     }
 
 }
+
+//Busca pelicula por titulo el titutlo puede ser no completo
+
+//añadir una nota a la pelicula de 0 a 5 estrellas, buscar por estrellas, cuidado con el seter
+//nota minima por ejemplo solo de 3 estrellas para arriba
+//añadir director nombre, nacionalidad, fechaNacimiento y pelis, busqueda por directo , entidad es director

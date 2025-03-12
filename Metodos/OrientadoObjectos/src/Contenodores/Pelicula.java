@@ -23,7 +23,7 @@ public class Pelicula extends Pruebas {
         this.id = id;
     }
 
-    public ArrayList<Generos> getGeneros(String genero) {
+    public ArrayList<Generos> getGeneros() {
         return generos;
     }
 
