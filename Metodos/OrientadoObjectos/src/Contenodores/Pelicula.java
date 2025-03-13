@@ -7,12 +7,14 @@ public class Pelicula extends Pruebas {
     private String titulo;
     private int año;
     private ArrayList<Generos> generos;
+    private int estrellas;
 
-    public Pelicula(String id, String titutlo, int año, ArrayList<Generos> generos){
+    public Pelicula(String id, String titutlo, int año, ArrayList<Generos> generos, int estrellas) {
         this.id = id;
         this.titulo = titutlo;
         this.año = año;
         this.generos = generos;
+        this.estrellas = estrellas;
     }
 
     public String getId() {
@@ -47,6 +49,13 @@ public class Pelicula extends Pruebas {
         this.titulo = titulo;
     }
 
+    public int getEstrellas() {
+        return estrellas;
+    }
+
+    public void setEstrellas(int estrellas) {
+        this.estrellas = estrellas;
+    }
 
     @Override
     public String toString() {
@@ -55,6 +64,7 @@ public class Pelicula extends Pruebas {
                 ", titulo='" + titulo + '\'' +
                 ", año=" + año +
                 ", generos=" + generos +
+                ", estrellas=" + estrellas +
                 '}';
     }
 }
