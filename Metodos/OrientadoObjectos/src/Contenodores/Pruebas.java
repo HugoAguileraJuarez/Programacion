@@ -1,10 +1,7 @@
 package Contenodores;
 
-import org.w3c.dom.ls.LSOutput;
-
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 
 public class Pruebas {
     public static void main(String[] args){
@@ -110,16 +107,16 @@ public class Pruebas {
         ArrayList<Generos> generosTitanic = new ArrayList<>();
         generosTitanic.add(drama);
         generosTitanic.add(romance);
-        peliculas.put("1", new Pelicula("1","Titanic",1995, generosTitanic));
+        peliculas.put("1", new Pelicula("1","Titanic",1995, generosTitanic, 1));
 
         ArrayList<Generos> generosJurassicPark = new ArrayList<>();
         generosJurassicPark.add(terror);
         generosJurassicPark.add(cienciaFicion);
-        peliculas.put("2", new Pelicula("2","Jurassic Park",1993,generosJurassicPark));
+        peliculas.put("2", new Pelicula("2","Jurassic Park",1993,generosJurassicPark,5));
 
         ArrayList<Generos> generosExorcista = new ArrayList<>();
         generosExorcista.add(terror);
-        peliculas.put("3", new Pelicula("3","Exorcista",1975,generosExorcista));
+        peliculas.put("3", new Pelicula("3","Exorcista",1975,generosExorcista,3));
 
         //Dada una id mostrar los datos de esa pelicula
         System.out.println(mostrarPelicula("2", peliculas));
@@ -172,16 +169,41 @@ public class Pruebas {
 
     public static ArrayList<Pelicula> filtroPorAño(int añoMin, int añoMax, HashMap<String, Pelicula> peliculas){
 
-
-
-
-        return null;
+        ArrayList<Pelicula> resultado = new ArrayList<>();
+        for (Pelicula entrada : peliculas.values()){
+            if (entrada.getAño() >= añoMin && entrada.getAño() <= añoMax) {
+                resultado.add(entrada);
+            }
+        }
+        return resultado;
     }
 
-}
+    //Busca pelicula por titulo el titutlo puede ser no completo
+    public static ArrayList<Pelicula> busqeudaLetra(String letra, HashMap<String, Pelicula> peliculas){
+        ArrayList<Pelicula> resultado = new ArrayList<>();
+        for (Pelicula entrada : peliculas.values()){
+            if (entrada.getTitulo().contains(letra)){
+                resultado.add(entrada);
+            }
+        }
 
-//Busca pelicula por titulo el titutlo puede ser no completo
+
+        return resultado ;
+    }
+
 
 //añadir una nota a la pelicula de 0 a 5 estrellas, buscar por estrellas, cuidado con el seter
 //nota minima por ejemplo solo de 3 estrellas para arriba
-//añadir director nombre, nacionalidad, fechaNacimiento y pelis, busqueda por directo , entidad es director
+    public static ArrayList<Pelicula> busquedaEstrella(int estrella, HashMap<String, Pelicula> peliculas){
+        ArrayList<Pelicula> resultado = new ArrayList<>();
+        for (Pelicula entrada : peliculas.values()){
+            if (entrada.getEstrellas() >= estrella){
+                resultado.add(entrada);
+            }
+        }
+        return resultado ;
+    }
+
+    //añadir director nombre, nacionalidad, fechaNacimiento y pelis, busqueda por directo , entidad es director
+
+}
