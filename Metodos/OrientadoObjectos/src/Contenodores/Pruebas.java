@@ -186,8 +186,6 @@ public class Pruebas {
                 resultado.add(entrada);
             }
         }
-
-
         return resultado ;
     }
 
