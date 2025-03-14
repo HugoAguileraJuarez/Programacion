@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class Menu {
     public static void main(String []args){
+        Menu menu = new Menu();
         Scanner teclado = new Scanner(System.in);
         boolean salir = false;
         salirBucle: //esto es una etiqueta para poder decidir donde salir con el break en un bucle
@@ -12,6 +13,7 @@ public class Menu {
             int selecion = teclado.nextInt();
             switch (selecion){
                 case 1:
+                menu.busquedaNombre();
 
             }
 
@@ -23,4 +25,6 @@ public class Menu {
 
 
     }
+
+
 }
