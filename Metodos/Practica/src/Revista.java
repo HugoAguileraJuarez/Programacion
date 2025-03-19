@@ -1,8 +1,8 @@
 public class Revista extends Materiales {
     private String editorial;
 
-    public Revista(String nombre, boolean disponible, String descripcion, String editorial) {
-        super(nombre, disponible, descripcion);
+    public Revista(String nombre, String descripcion, String editorial) {
+        super(nombre, descripcion);
         this.editorial = editorial;
     }
 

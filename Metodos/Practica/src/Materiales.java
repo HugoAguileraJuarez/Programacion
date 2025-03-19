@@ -1,16 +1,14 @@
+import java.util.concurrent.atomic.AtomicInteger;
+
 public abstract class Materiales {
+    private AtomicInteger id;
     private String nombre;
-    private boolean disponible;
     private String descripcion;
 
-
-    public Materiales(String nombre, boolean disponible, String descripcion){
-        this.disponible = disponible;
+    public Materiales(String nombre, String descripcion){
         this.nombre = nombre;
         this.descripcion = descripcion;
     }
-
-
 
     public String getNombre(){
         return nombre;
@@ -20,13 +18,6 @@ public abstract class Materiales {
         this.nombre = nombre;
     }
 
-    public boolean isDisponible() {
-        return disponible;
-    }
-
-    public void setDisponible(boolean disponible) {
-        this.disponible = disponible;
-    }
 
     public String getDescripcion() {
         return descripcion;

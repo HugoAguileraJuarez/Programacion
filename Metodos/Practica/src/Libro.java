@@ -2,9 +2,10 @@ public class Libro extends Materiales implements Prestable{
     private String autor;
     private int numPaginas;
     private static int prestados;
+    private boolean prestado;
 
-    public Libro(String nombre, boolean disponible, String descripcion, String autor, int numPaginas) {
-        super(nombre, disponible, descripcion);
+    public Libro(String nombre, boolean prestado, String descripcion, String autor, int numPaginas) {
+        super(nombre, descripcion);
         this.autor = autor;
         this.numPaginas = numPaginas;
     }
@@ -31,7 +32,9 @@ public class Libro extends Materiales implements Prestable{
 
     @Override
     public boolean alquilar() {
-        if (isDisponible()){
+        if (!prestado){
+            prestado = true;
+            prestados++;
             return true;
         }
         return false;
@@ -39,10 +42,13 @@ public class Libro extends Materiales implements Prestable{
 
     @Override
     public boolean devuelto() {
+        if (prestado){
+            prestado = false;
+            prestados++;
+            return true;
+        }
         return false;
     }
-
-
 
 
 }

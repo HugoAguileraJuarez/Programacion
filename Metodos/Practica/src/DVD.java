@@ -1,10 +1,12 @@
 public class DVD extends Materiales implements Prestable{
     private String contenido;
-    private static int prestado;
+    private static int prestados;
+    private boolean prestado;
 
-    public DVD(String nombre, boolean disponible, String descripcion, String contenido) {
-        super(nombre, disponible, descripcion);
+    public DVD(String nombre, String descripcion, String contenido, boolean estado) {
+        super(nombre, descripcion);
         this.contenido = contenido;
+        this.prestado = false;
     }
 
     public String getContenido(){
@@ -16,12 +18,14 @@ public class DVD extends Materiales implements Prestable{
     }
 
     public int getPrestado(){
-        return prestado;
+        return prestados;
     }
 
     @Override
     public boolean alquilar() {
-        if (isDisponible()){
+        if (!prestado){
+            prestado = true;
+            prestados++;
             return true;
         }
         return false;
@@ -29,12 +33,13 @@ public class DVD extends Materiales implements Prestable{
 
     @Override
     public boolean devuelto() {
-        if (isDisponible()){
+        if (prestado){
+            prestado = false;
+            prestados++;
             return true;
         }
         return false;
     }
-
 
 
 }

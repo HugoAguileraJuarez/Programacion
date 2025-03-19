@@ -1,8 +1,13 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Menu {
     public static void main(String []args){
-        Menu menu = new Menu();
+        Biblioteca biblio = new Biblioteca();
+
+        biblio.addLibro("4Patas", "Yo", "Un libro que te deja en 4",55);
+
+        /*
         Scanner teclado = new Scanner(System.in);
         boolean salir = false;
         salirBucle: //esto es una etiqueta para poder decidir donde salir con el break en un bucle
@@ -31,14 +36,13 @@ public class Menu {
 
 
 
-
-
             }
 
 
 
         }
 
+        */
 
 
 
