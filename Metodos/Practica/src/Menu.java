@@ -2,8 +2,12 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Menu {
+    private static final String ruta = "Biblioteca.json";
+
+
     public static void main(String []args){
-        Biblioteca biblioteca = new Biblioteca();
+
+        Biblioteca biblioteca = new Biblioteca();//camibar esto por cargar biblio que sera un json
         biblioteca.addLibro("El Principito", "Antoine de Saint-Exupéry", "Un clásico de la literatura", 96);
 
 
