@@ -3,9 +3,9 @@ import java.util.Scanner;
 
 public class Menu {
     public static void main(String []args){
-        Biblioteca biblio = new Biblioteca();
+        Biblioteca biblioteca = new Biblioteca();
+        biblioteca.addLibro("El Principito", "Antoine de Saint-Exupéry", "Un clásico de la literatura", 96);
 
-        biblio.addLibro("4Patas", "Yo", "Un libro que te deja en 4",55);
 
         /*
         Scanner teclado = new Scanner(System.in);

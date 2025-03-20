@@ -4,10 +4,11 @@ public class Libro extends Materiales implements Prestable{
     private static int prestados;
     private boolean prestado;
 
-    public Libro(String nombre, boolean prestado, String descripcion, String autor, int numPaginas) {
+    public Libro(String nombre, String descripcion, String autor, int numPaginas) {
         super(nombre, descripcion);
         this.autor = autor;
         this.numPaginas = numPaginas;
+        this.prestado = false;
     }
 
     public String getAutor(){
