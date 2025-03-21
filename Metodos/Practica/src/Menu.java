@@ -1,15 +1,45 @@
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import com.google.gson.Gson;
 
 public class Menu {
-    private static final String ruta = "Biblioteca.json";
+    private static final String RUTA_ARCHIVO = "/home/alumne/Documentos/Programacion/Tema2/Metodos/Practica/Biblioteca.json";
+    public static Biblioteca leerJSON(){
+        Gson gson = new Gson();
+        Biblioteca biblio = null;
+        try(FileReader reader = new FileReader(RUTA_ARCHIVO)){
+            biblio = gson.fromJson(reader, Biblioteca.class);
+        }catch (IOException e){
+            e.printStackTrace();
+        }finally {
+            return biblio;
+        }
+    }
 
-
+    public static void escribirJSON(Biblioteca biblioteca){
+        Gson gson = new Gson();
+        String json = gson.toJson(biblioteca);
+        try(FileWriter writer = new FileWriter(RUTA_ARCHIVO)){
+            writer.write(json);
+            System.out.println("JSON guardado y asegurado");
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
     public static void main(String []args){
 
         Biblioteca biblioteca = new Biblioteca();//camibar esto por cargar biblio que sera un json
-        biblioteca.addLibro("El Principito", "Antoine de Saint-Exupéry", "Un clásico de la literatura", 96);
+        biblioteca.addLibro("Edl Principito", "Antoine de Saint-Exupéry", "Un clásico de la literatura", 96);
+        biblioteca.addLibro("Eduardo", "Juan", "Una cosa", 3);
 
+        System.out.println("Materiales en la biblioteca:");
+        for (Materiales material : biblioteca.mostarBiblio()) {
+            System.out.println(material);
+        }
+        escribirJSON(biblioteca);
 
         /*
         Scanner teclado = new Scanner(System.in);
@@ -22,7 +52,7 @@ public class Menu {
             int selecion = teclado.nextInt();
             switch (selecion){
                 case 1:
-                //aqui iria algun tipo de put o iria en bibliteca pero tocaria poner que intruduciera valores y tener algun tipo de control de errores
+                    //aqui iria algun tipo de put o iria en bibliteca pero tocaria poner que intruduciera valores y tener algun tipo de control de errores
 
                 case 2:
                     //aqui toccaria la eliminacion que eso ya no se como se haria pero me imagino algun tipo de metodo o algo parecido
@@ -38,18 +68,10 @@ public class Menu {
                     //aqui tocaaria volver a pedir que material quiere devolver para que vaya al metodo para comprobar primero si esta ocupado para luego cambiar su disponibilidad a verdadero que seria al contrario que el
                     //caso anterior de manera que se descontaria un valor total al los prestados
 
-
-
             }
 
-
-
         }
-
-        */
-
-
-
+         */
     }
 
 

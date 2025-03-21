@@ -14,7 +14,6 @@ public class Biblioteca {
         materiales.put(String.valueOf(libro.getId()), libro);
     }
 
-
     public ArrayList<Libro> nomLibro(String letra, HashMap<String, Libro> libros){
         ArrayList<Libro> resultado = new ArrayList<>();
         for (Libro entrada : libros.values()){
@@ -24,6 +23,18 @@ public class Biblioteca {
         }
         return resultado ;
     }
+
+    public ArrayList<Materiales> mostarBiblio(){
+        ArrayList<Materiales> todo = new ArrayList<>();
+        for (Materiales entrada : materiales.values()){
+            todo.add(entrada);
+        }
+        return todo;
+    }
+
+
+
+
 
 }
 
