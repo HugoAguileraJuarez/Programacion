@@ -28,7 +28,7 @@ public class Menu {
             e.printStackTrace();
         }
     }
-    public static void main(String []args){1
+    public static void main(String []args){
         Biblioteca biblioteca = new Biblioteca();//camibar esto por cargar biblio que sera un json
         Scanner teclado = new Scanner(System.in);
         boolean salir = false;
