@@ -5,7 +5,7 @@ public class Biblioteca {
 
     HashMap<String, Materiales> materiales = new HashMap<>();
     ArrayList<Libro> libros = new ArrayList<>();
-    ArrayList<DVD> dvd = new ArrayList<>();
+    ArrayList<DVD> Dvd = new ArrayList<>();
     ArrayList<Revista> revistas = new ArrayList<>();
 
     public void addLibro(String nom, String aut, String desc, int numP) {
@@ -18,6 +18,11 @@ public class Biblioteca {
         Revista revista = new Revista(nom,desc,edio);
         revistas.add(revista);
         materiales.put(String.valueOf(revista.getId()), revista);
+    }
+
+    public void addDVD(String nom, String desc, String cont){
+        DVD dvd = new DVD(nom,desc,cont);
+        Dvd.add(dvd);
     }
 
     public ArrayList<Libro> nomLibro(String letra, HashMap<String, Libro> libros){

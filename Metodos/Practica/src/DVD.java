@@ -3,7 +3,7 @@ public class DVD extends Materiales implements Prestable{
     private static int prestados;
     private boolean prestado;
 
-    public DVD(String nombre, String descripcion, String contenido, boolean estado) {
+    public DVD(String nombre, String descripcion, String contenido) {
         super(nombre, descripcion);
         this.contenido = contenido;
         this.prestado = false;
