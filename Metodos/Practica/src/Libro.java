@@ -51,5 +51,12 @@ public class Libro extends Materiales implements Prestable{
         return false;
     }
 
-
+    @Override
+    public String toString() {
+        return super.toString() + "Libro{" +
+                "autor='" + autor + '\'' +
+                ", numPaginas=" + numPaginas +
+                ", prestado=" + prestado +
+                '}';
+    }
 }

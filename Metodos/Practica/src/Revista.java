@@ -14,5 +14,10 @@ public class Revista extends Materiales {
         this.editorial = editorial;
     }
 
-
+    @Override
+    public String toString() {
+        return super.toString() + "Revista{" +
+                "editorial='" + editorial + '\'' +
+                '}';
+    }
 }

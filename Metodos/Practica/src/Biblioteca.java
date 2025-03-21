@@ -14,6 +14,12 @@ public class Biblioteca {
         materiales.put(String.valueOf(libro.getId()), libro);
     }
 
+    public void addRevistao(String nom, String desc, String edio) {
+        Revista revista = new Revista(nom,desc,edio);
+        revistas.add(revista);
+        materiales.put(String.valueOf(revista.getId()), revista);
+    }
+
     public ArrayList<Libro> nomLibro(String letra, HashMap<String, Libro> libros){
         ArrayList<Libro> resultado = new ArrayList<>();
         for (Libro entrada : libros.values()){
