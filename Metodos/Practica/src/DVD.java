@@ -37,7 +37,7 @@ public class DVD extends Materiales implements Prestable{
     public boolean devuelto() {
         if (prestado){
             prestado = false;
-            prestados++;
+            prestados--;
             return true;
         }
         return false;
