@@ -31,6 +31,10 @@ public class Libro extends Materiales implements Prestable{
         return prestados;
     }
 
+    public boolean getPrestado(){
+        return prestado;
+    }
+
     @Override
     public boolean alquilar() {
         if (!prestado){

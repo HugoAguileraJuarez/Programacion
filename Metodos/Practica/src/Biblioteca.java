@@ -25,23 +25,48 @@ public class Biblioteca {
         Dvd.add(dvd);
     }
 
-    public ArrayList<Libro> nomLibro(String letra, HashMap<String, Libro> libros){
-        ArrayList<Libro> resultado = new ArrayList<>();
-        for (Libro entrada : libros.values()){
-            if (entrada.getNombre().contains(letra)){
-                resultado.add(entrada);
-            }
-        }
-        return resultado ;
-    }
 
     public ArrayList<Materiales> mostarBiblio(){
-        ArrayList<Materiales> todo = new ArrayList<>();
+        ArrayList<Materiales> lista = new ArrayList<>();
         for (Materiales entrada : materiales.values()){
-            todo.add(entrada);
+            lista.add(entrada);
         }
-        return todo;
+        return lista;
     }
+
+
+    public ArrayList<Materiales> buscarTitulo(String titulo){
+        ArrayList<Materiales> lista = new ArrayList<>();
+        for (Materiales entrada: materiales.values()){
+            if (titulo.contains(entrada.getNombre())){
+                lista.add(entrada);
+            }
+        }
+        return lista;
+    }
+
+
+
+    public ArrayList<Materiales> mostrarPrestados(){
+        ArrayList<Materiales> lista = new ArrayList<>();
+        for (Materiales entrada: materiales.values()){
+            if (entrada instanceof Libro) {
+                Libro libro = (Libro) entrada;
+                if (libro.getPrestado()){
+                    lista.add(libro);
+                }
+            }else if (entrada instanceof DVD){
+                DVD dvd = (DVD) entrada;
+                if (dvd.getPrestado()){
+                    lista.add(dvd);
+                }
+            }
+        }
+        return lista;
+    }
+
+
+
 
 
 

@@ -17,9 +17,11 @@ public class DVD extends Materiales implements Prestable{
         this.contenido = contenido;
     }
 
-    public int getPrestado(){
+    public int getPrestados(){
         return prestados;
     }
+
+    public boolean getPrestado(){return prestado;}
 
     @Override
     public boolean alquilar() {
