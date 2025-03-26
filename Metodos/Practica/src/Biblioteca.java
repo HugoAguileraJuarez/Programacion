@@ -2,30 +2,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Biblioteca {
-
+    //  Creacion de HashMap y ArrayList
     HashMap<String, Materiales> materiales = new HashMap<>();
     ArrayList<Libro> libros = new ArrayList<>();
     ArrayList<DVD> Dvd = new ArrayList<>();
     ArrayList<Revista> revistas = new ArrayList<>();
 
-    public void addLibro(String nom, String aut, String desc, int numP) {
-        Libro libro = new Libro(nom, desc, aut, numP);
-        libros.add(libro);
-        materiales.put(String.valueOf(libro.getId()), libro);
-    }
-
-    public void addRevistao(String nom, String desc, String edio) {
-        Revista revista = new Revista(nom,desc,edio);
-        revistas.add(revista);
-        materiales.put(String.valueOf(revista.getId()), revista);
-    }
-
-    public void addDVD(String nom, String desc, String cont){
-        DVD dvd = new DVD(nom,desc,cont);
-        Dvd.add(dvd);
-    }
-
-
+    //  Coleciones
     public ArrayList<Materiales> mostarBiblio(){
         ArrayList<Materiales> lista = new ArrayList<>();
         for (Materiales entrada : materiales.values()){
@@ -33,7 +16,6 @@ public class Biblioteca {
         }
         return lista;
     }
-
 
     public ArrayList<Materiales> buscarTitulo(String titulo){
         ArrayList<Materiales> lista = new ArrayList<>();
@@ -45,7 +27,7 @@ public class Biblioteca {
         return lista;
     }
 
-
+    //Hacer metodo de buscar por elemento
 
     public ArrayList<Materiales> mostrarPrestados(){
         ArrayList<Materiales> lista = new ArrayList<>();
@@ -66,7 +48,35 @@ public class Biblioteca {
     }
 
 
+    //  Parte del menu
 
+    //  Añadir elemento
+    public void addLibro(String nom, String aut, String desc, int numP) {
+        Libro libro = new Libro(nom, desc, aut, numP);
+        libros.add(libro);
+        materiales.put(String.valueOf(libro.getId()), libro);
+    }
+
+    public void addRevistao(String nom, String desc, String edio) {
+        Revista revista = new Revista(nom,desc,edio);
+        revistas.add(revista);
+        materiales.put(String.valueOf(revista.getId()), revista);
+    }
+
+    public void addDVD(String nom, String desc, String cont){
+        DVD dvd = new DVD(nom,desc,cont);
+        Dvd.add(dvd);
+    }
+
+    //  Eliminar un elemento
+    public boolean removeLibro(int id) {
+        for (int entrda: materiales.keySet()){
+            if (id == entrda){
+
+            }
+        }
+        return  true;
+    }
 
 
 
