@@ -27,7 +27,7 @@ public class Biblioteca {
         return lista;
     }
 
-    //Hacer metodo de buscar por elemento
+    //Hacer metodo para mostrar por elemento
 
     public ArrayList<Materiales> mostrarPrestados(){
         ArrayList<Materiales> lista = new ArrayList<>();
@@ -68,14 +68,15 @@ public class Biblioteca {
         Dvd.add(dvd);
     }
 
-    //  Eliminar un elemento
-    public boolean removeLibro(int id) {
-        for (int entrda: materiales.keySet()){
-            if (id == entrda){
+    // Buscar un elemento
+    public Materiales buscar(int id){
+        return materiales.get(id);
+    }
 
-            }
-        }
-        return  true;
+    //  Eliminar un elemento
+    public boolean eliminarMaterial(int id) {
+
+        return  false;
     }
 
 
